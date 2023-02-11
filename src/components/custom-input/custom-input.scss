@@ -1,0 +1,64 @@
+@import '../../styles/constants.scss';
+
+.search-input-wrapper {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 350px;
+  height: 38px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18),
+    0px 1px 5px rgba(191, 196, 201, 0.24);
+  border-radius: 20px;
+  color: $color-grey-black-40;
+  .search-button {
+    background-color: inherit;
+    border: none;
+  }
+  .search-input {
+    width: 90%;
+    border: none;
+    outline: none;
+    color: $color-grey-black-40;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+  }
+  .close-input-button {
+    display: none;
+    background-color: $color-white;
+    border: none;
+    img {
+      filter: invert(82%) sepia(51%) saturate(5030%) hue-rotate(344deg) brightness(99%) contrast(96%);
+    }
+  }
+  input::placeholder {
+    color: $color-grey-black-40;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-input-wrapper {
+    height: 32px;
+    width: 32px;
+
+    .search-input {
+      display: none;
+    }
+
+    .close-input-button {
+      display: none;
+    }
+    .visible {
+      display: flex;
+    }
+  }
+  .open {
+    width: 290px;
+  }
+}

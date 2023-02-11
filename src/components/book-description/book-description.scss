@@ -1,0 +1,397 @@
+@import '../../styles/constants.scss';
+
+.book-description-wrapper {
+  .book-description {
+    display: flex;
+    flex-direction: column;
+    .book-description-general {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px 165px;
+      gap: 30px;
+      width: 1440px;
+      height: 700px;
+      margin: 42px auto;
+
+      .book-image {
+        width: 445px;
+        height: 594px;
+        @media (max-width: 768px) {
+          width: 136px;
+          height: 198px;
+        }
+        @media (max-width: 320px) {
+          width: 188px;
+          height: 260px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .book-description-main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        width: 635px;
+        height: 658px;
+
+        .book-name {
+          width: 635px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 40px;
+          letter-spacing: 2px;
+          color: $color-dark;
+          @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 28px;
+          }
+          @media (max-width: 320px) {
+            font-size: 24px;
+            line-height: 30px;
+            letter-spacing: 0.1px;
+            margin-left: -50px;
+          }
+        }
+        .book-author {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0.1px;
+          color: $color-grey-black-40;
+          @media (max-width: 320px) {
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: 0.1px;
+          }
+        }
+        .book-book-button {
+          width: 350px;
+          height: 52px;
+          background: $color-hover;
+          border: none;
+          border-radius: 30px;
+          text-transform: uppercase;
+          color: $color-white;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 150%;
+          letter-spacing: 0.2px;
+          @media (max-width: 768px) {
+            width: 306px;
+            height: 52px;
+          }
+          @media (max-width: 320px) {
+            margin-left: -40px;
+            width: 250px;
+            height: 40px;
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+        .book-annotation {
+          display: flex;
+          flex-direction: column;
+          padding: 30px 0;
+          gap: 36px;
+          width: 635px;
+          height: 300px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1.2px;
+          color: $color-dark;
+          .book-annotation-title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 1px;
+            color: $color-dark;
+            @media (max-width: 768px) {
+              margin-top: 25px;
+            }
+          }
+          @media (max-width: 768px) {
+            margin-left: -160px;
+            margin-top: -45px;
+          }
+          @media (max-width: 320px) {
+            width: 280px;
+            margin-left: -45px;
+            margin-top: -45px;
+            margin-bottom: 2px;
+          }
+        }
+        @media (max-width: 768px) {
+          width: 470px;
+          .book-name {
+            width: 470px;
+          }
+        }
+        @media (max-width: 320px) {
+          width: 320px;
+          .book-name {
+            width: 288px;
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        width: 768px;
+        padding: 0px 64px;
+        height: auto;
+      }
+      @media (max-width: 320px) {
+        width: 320px;
+        padding: 0px 64px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .book-description-detailed {
+      width: 1110px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      .detailed-rating {
+        width: 350px;
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: $color-dark;
+        .rating-title {
+          height: 58px;
+          width: 350px;
+          margin-bottom: 16px;
+          border-bottom: 1px solid $color-grey-black-10;
+        }
+        .rating-star {
+          display: flex;
+          flex-direction: row;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0.1px;
+          gap: 12px;
+          .rating-score {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.1px;
+            color: $color-dark;
+          }
+        }
+        @media (max-width: 768px) {
+          width: 640px;
+        }
+      }
+      .deatiled-info {
+        display: flex;
+        flex-direction: column;
+        padding: 62px 0;
+        .detailed-info-content {
+          display: grid;
+          grid-template-columns: 450px;
+          grid-template-rows: repeat(5, 20px);
+          grid-auto-flow: column;
+          grid-gap: 20px;
+          .content-list {
+            display: flex;
+            width: 635px;
+            .text-gray-style {
+              width: 30%;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 0.1px;
+              color: $color-grey-black-40;
+              @media (max-width: 768px) {
+                width: 60%;
+              }
+              @media (max-width: 320px) {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.2px;
+              }
+            }
+            .text-common-style {
+              width: 65%;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 24px;
+              color: $color-dark;
+              @media (max-width: 320px) {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.2px;
+              }
+            }
+            @media (max-width: 768px) {
+              width: 310px;
+            }
+            @media (max-width: 320px) {
+              width: 240px;
+            }
+          }
+          @media (max-width: 768px) {
+            grid-template-columns: 330px;
+            grid-template-rows: repeat(5, 20px);
+            grid-auto-flow: column;
+            grid-gap: 20px;
+          }
+          @media (max-width: 320px) {
+            grid-template-columns: 330px;
+            grid-template-rows: repeat(9, 16px);
+            grid-auto-flow: column;
+            grid-gap: 20px;
+          }
+        }
+        .detailed-info-title {
+          height: 44px;
+          width: 350px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 1px;
+          color: $color-dark;
+          border-bottom: 1px solid $color-grey-black-10;
+          margin-bottom: 16px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        margin-top: -50px;
+        padding: 0 64px;
+        width: 100%;
+      }
+      @media (max-width: 320px) {
+        margin-left: -45px;
+        margin-top: 150px;
+        padding: 0 64px;
+        width: 100%;
+      }
+    }
+    .book-reviews {
+      width: 1110px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: 18px;
+      .book-reviews-title {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        align-items: center;
+        height: 44px;
+        width: 350px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: $color-dark;
+        border-bottom: 1px solid $color-grey-black-10;
+        .review-title-value {
+          width: 8px;
+          height: 24px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 0.1px;
+          color: $color-grey-black-40;
+        }
+        .arrow-chevron {
+          background-color: $color-white;
+          border: none;
+          margin-left: 6px;
+          :hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .rate-a-book {
+        margin-top: -15px;
+        width: 350px;
+        height: 52px;
+        border-radius: 30px;
+        background: $color-pressed;
+        border: none;
+        text-transform: uppercase;
+        color: $color-white;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.2px;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        @media (max-width: 320px) {
+          width: 270px;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        width: 640px;
+        margin: 40px auto;
+        padding-left: 16px;
+      }
+    }
+    .visible {
+      img {
+        transform: rotate(180deg);
+      }
+      .review-user {
+        display: none;
+      }
+      .book-reviews-title {
+        border: none;
+        padding-bottom: 42px;
+      }
+    }
+  }
+}
+
+.card-not-found-img {
+  height: 594px;
+  width: 445px;
+  margin: 0 auto;
+  border: 1px solid $color-grey-black-40;
+  border-radius: 10px;
+  background-image: url('../../assets/icon/icon_cat.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  @media (max-width: 768px) {
+    width: 136px;
+    height: 198px;
+  }
+  @media (max-width: 320px) {
+    width: 188px;
+    height: 260px;
+  }
+}

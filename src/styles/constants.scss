@@ -1,0 +1,25 @@
+@mixin montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+$color-accent: rgba(255, 82, 83, 1);
+$color-dark: rgba(54, 54, 54, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-black: rgba(0, 0, 0, 1);
+$color-dark-30: rgba(54, 54, 54, 0.3);
+$color-pressed: linear-gradient(233.73deg, #F83600 -16.08%, #F9D423 327.37%);
+$color-hover: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+$color-warning: rgba(255, 188, 31, 1);
+$color-positive: rgba(0, 202, 113, 1);
+$color-negative: rgba(244, 44, 79, 1);
+$color-positive-background: rgba(235, 249, 241, 1);
+$color-negative-background: rgba(254, 235, 234, 1);
+$color-grey-black-70: rgba(114, 114, 114, 1);
+$color-grey-black-40: rgba(167, 167, 167, 1);
+$color-grey-black-20: rgba(191, 196, 201, 1);
+$color-grey-black-10: rgba(235, 235, 235, 1);
+$color-grey-black-5: rgba(249, 249, 250, 1);
+
+$breakpoint-1440: 1440px;
+$breakpoint-768: 768px;
+$breakpoint-320: 320px;

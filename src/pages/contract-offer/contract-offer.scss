@@ -1,0 +1,77 @@
+@import '../../styles/constants.scss';
+
+.contract-offer-page {
+  .contract-offer-content {
+    width: 1110px;
+    display: flex;
+    flex-direction: row;
+    margin: 60px auto;
+    letter-spacing: 1px;
+
+    .content {
+      width: 825px;
+      margin-bottom: -35px;
+      .title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        letter-spacing: 2px;
+        color: $color-dark;
+        margin-bottom: 20px;
+        @media (max-width: 320px) {
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0.1px;
+          margin-bottom: 0;
+        }
+      }
+
+      ol {
+        list-style: none;
+        counter-reset: li;
+        li {
+          margin: 16px 0 16px 26px;
+          font-weight: 400;
+          font-size: 16px;
+          &:before {
+            counter-increment: li;
+            content: counters(li, '.') '. ';
+          }
+        }
+      }
+      .contract-offer-list {
+        list-style-type: decimal;
+        list-style: none;
+        counter-reset: li;
+        margin-left: -20px;
+        .contract-offer-item {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+          margin-bottom: 32px;
+        }
+      }
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 83vw;
+        margin: 0 64px;
+      }
+      @media (max-width: 320px) {
+        width: 90vw;
+        padding: 8px;
+        margin: 0 16px;
+      }
+    }
+    @media (max-width: 320px) {
+      margin: -20px 0px;
+    }
+  }
+  @media (max-width: 1050px) {
+    .menu-navigation {
+        display: none;
+    }
+  }
+}

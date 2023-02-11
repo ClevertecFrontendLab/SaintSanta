@@ -1,0 +1,14 @@
+@import '../../styles/constants.scss';
+
+.book-page {
+  .book-page-main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    // @media (max-width: 768px) {
+    //     margin: 0 auto;
+    //     margin-top: 42px;
+    // }
+  }
+}
