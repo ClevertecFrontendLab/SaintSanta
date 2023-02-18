@@ -42,11 +42,11 @@ export const BookDescription = () => {
       {!error && (
         <div className='book-description'>
           <div className='book-description-general'>
-            {book.images === null || undefined ? (
+            {book.images === null || book.images === undefined ? (
               <div className='card-not-found-img' />
             ) : (
               <div>
-                <img className='book-image' src='' alt='Photo not loading...' />
+                <img className='book-image' src={URL_API+book.images[0].url} alt='Photo not loading...' />
               </div>
             )}
 
