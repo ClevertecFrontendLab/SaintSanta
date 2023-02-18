@@ -1,7 +1,9 @@
-import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { menuAllBooks, menuListBasic,menuListCategories } from '../../constants/menu-category'
+import { menuAllBooks, menuListBasic } from '../../constants/menu-category';
+import { fetchCategories } from '../../store/categories-slice';
 
 import arrowBottomBlack from './assets/arrow-bottom-black.svg';
 import arrowTopColor from './assets/arrow-top-color.svg';
@@ -9,22 +11,30 @@ import arrowTopColorCollapse from './assets/arrow-top-color-сollapse.svg';
 
 import './menu-navigation.scss';
 
-type NavigationProps = {
-  children?: ReactNode;
-  setButtonState?: Dispatch<SetStateAction<boolean>>;
-  burgerMenuNavigation?: boolean;
-  dataTestid?: string;
-};
+// type NavigationProps = {
+//   children?: ReactNode;
+//   setButtonState?: Dispatch<SetStateAction<boolean>>;
+//   burgerMenuNavigation?: boolean;
+//   dataTestid?: string;
+// };
 
 export const MenuNavigation = ({
   children,
   setButtonState,
   burgerMenuNavigation = false,
   dataTestid,
-}: NavigationProps) => {
+  // }: NavigationProps) => {
+}) => {
   const { pathname } = useLocation();
 
   const [isMenuBook, setMenuBook] = useState(true);
+
+  const { categories } = useSelector((state) => state.categories);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
   return (
     <nav className='navigation' data-test-id={dataTestid}>
@@ -66,17 +76,17 @@ export const MenuNavigation = ({
             </NavLink>
           </li>
 
-          {menuListCategories.map(({ name, category, id, value }) => (
+          {categories.map(({ name, id, path }) => (
             <li key={id}>
               <NavLink
-                to={`/${menuListBasic.books.path}/${category}`}
+                to={`/books/${path}`}
                 className={({ isActive }) => (isActive ? 'nav-item nav-item-active' : 'nav-item')}
                 onClick={() => setButtonState?.(false)}
               >
                 {name}
               </NavLink>
-              <span className={pathname.split('/')[2] === category ? 'text-span-active' : 'text-span'}>
-                {value}
+              <span className={pathname.split('/')[2] === path ? 'text-span-active' : 'text-span'}>
+                {Math.ceil(Math.random() * 10)}
               </span>
             </li>
           ))}
