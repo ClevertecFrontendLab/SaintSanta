@@ -35,9 +35,12 @@ export const BookDescription = () => {
     dispatch(fetchBook(bookId));
   }, [dispatch, bookId]);
 
+  if (status === 'loading') {
+    return <Loader />;
+  }
+
   return (
     <div className='book-description-wrapper'>
-      {status === 'loading' ? <Loader /> : ''}
       {error && <Error error={'Что-то пошло не так. Обновите страницу через некоторое время.' || error} />}
       {!error && (
         <div className='book-description'>
@@ -46,7 +49,7 @@ export const BookDescription = () => {
               <div className='card-not-found-img' />
             ) : (
               <div>
-                <img className='book-image' src={URL_API+book.images[0].url} alt='Photo not loading...' />
+                <img className='book-image' src={URL_API + book.images[0].url} alt='Photo not loading...' />
               </div>
             )}
 
@@ -117,7 +120,9 @@ export const BookDescription = () => {
           <div className={isOpenReviews ? 'book-reviews' : 'book-reviews visible'}>
             <div className='book-reviews-title'>
               Отзывы{' '}
-              <span className='review-title-value'>{/* {book.comments === null ? 0 : book.comments.length} */}0</span>
+              <span className='review-title-value'>
+                {book.comments === null || book.comments === undefined ? 0 : book.comments.length}
+              </span>
               <button
                 className='arrow-chevron'
                 type='button'
