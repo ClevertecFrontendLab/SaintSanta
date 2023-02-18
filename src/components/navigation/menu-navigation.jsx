@@ -29,8 +29,9 @@ export const MenuNavigation = ({
 
   const [isMenuBook, setMenuBook] = useState(true);
 
-  const { categories } = useSelector((state) => state.categories);
+  const { categories, errorCategories } = useSelector((state) => state.categories);
   const dispatch = useDispatch();
+  const isError = Boolean(errorCategories);
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -72,7 +73,7 @@ export const MenuNavigation = ({
               onClick={() => setButtonState?.(false)}
               data-test-id={`${dataTestid}-books`}
             >
-              Все книги
+              {isError ? '' : menuAllBooks.name}
             </NavLink>
           </li>
 
