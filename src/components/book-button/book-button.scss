@@ -1,0 +1,60 @@
+@import '../../styles/constants.scss';
+
+.button-busy {
+  background-color: $color-grey-black-5;
+  border: 1px solid $color-grey-black-20;
+  height: 40px;
+  width: 160px;
+  margin: 19px 4px 16px 4px;
+  color: $color-grey-black-40;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  @media (max-width: 320px) {
+    width: 256px;
+}
+}
+
+.button-is-booked {
+  background-color: $color-white;
+  border: 1px solid $color-grey-black-20;
+  height: 40px;
+  width: 160px;
+  margin: 19px 4px 16px 4px;
+  color: $color-dark;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  @media (max-width: 320px) {
+    width: 256px;
+}
+}
+
+.card-button {
+  height: 40px;
+  width: 174px;
+  margin: 22px 8px 16px 4px;
+  background: $color-hover;
+  border: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: $color-white;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  @media (max-width: 320px) {
+    width: 256px;
+}
+}
+
+

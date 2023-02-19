@@ -1,0 +1,33 @@
+@import '../../styles//constants.scss';
+
+.book-wrapper {
+  background-color: $color-grey-black-5;
+  .book {
+    width: 1110px;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    color: $color-grey-black-40;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    letter-spacing: 1.35px;
+    @media (max-width: 768px) {
+      width: 640px;
+      line-height: 1.7;
+      padding: 20px 22px;
+    }
+    @media (max-width: 320px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 288px;
+      letter-spacing: 0.2px;
+      padding: 20px 22px;
+      gap: 2px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../styles/constants.scss';
+
+.filter-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .filter-sort-search {
+    display: flex;
+    gap: 16px;
+  }
+  .filter-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    .filter-button {
+      background-color: $color-white;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: none;
+      box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18),
+        0px 1px 5px rgba(191, 196, 201, 0.24);
+    }
+    .active {
+      background: $color-hover;
+      color: $color-white;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 640px;
+  }
+}
+
+.white {
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(137deg) brightness(99%) contrast(200%);
+}
+
+.grey {
+  filter: invert(69%) sepia(3%) saturate(19%) hue-rotate(326deg) brightness(98%) contrast(87%);
+}
