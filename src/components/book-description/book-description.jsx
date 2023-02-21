@@ -11,8 +11,8 @@ import { BookDescriptionAPI } from '../../models/book-data-api';
 import { fetchBook } from '../../store/book-slice';
 import { Error } from '../error';
 import { Loader } from '../loader';
-import { Rating } from '../rating/rating';
-import { Slider } from '../slider/slider';
+import { Rating } from '../rating';
+import { Slider } from '../slider';
 import { UsersReviewList } from '../users-review-list/users-review-list';
 
 import './book-description.scss';

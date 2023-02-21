@@ -10,6 +10,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin: 60px auto;
+  flex: 1 1;
   @media (max-width: 768px) {
     justify-content: center;
   }
@@ -17,7 +18,7 @@ body {
   .main-content {
     width: 825px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     // margin: 0 auto;
     // margin-left: 30px;
     @media (max-width: 768px) {
@@ -26,12 +27,13 @@ body {
     @media (max-width: 320px) {
         margin-top: -30px;
         align-items: center;
-      }
+    }
   }
 
   .content {
     display: flex;
     flex-direction: column;
+    // align-content: flex-start;
   }
 
   .filter-wrapper {

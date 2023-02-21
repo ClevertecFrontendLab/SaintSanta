@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // import { Books } from '../../constants/books';
 import { fetchBooks } from '../../store/books-slice';
-import { /* BookType, */ Card } from '../card/card';
+import { /* BookType, */ Card } from '../card';
 
 import './card-list.scss';
 

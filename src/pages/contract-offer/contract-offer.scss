@@ -1,6 +1,8 @@
 @import '../../styles/constants.scss';
 
 .contract-offer-page {
+    display: flex;
+    flex: 1 1;
   .contract-offer-content {
     width: 1110px;
     display: flex;

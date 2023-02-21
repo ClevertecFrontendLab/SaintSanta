@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Avatar from '../../assets/img/avatar.png';
 import CleverlandLogo from '../../assets/logo/cleverland.png';
-import { Burger } from '../burger/burger';
+import { Burger } from '../burger';
 
 import './header.scss';
 

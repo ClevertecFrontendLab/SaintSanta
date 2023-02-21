@@ -1,6 +1,8 @@
 @import '../../styles/constants.scss';
 
 .terms-page {
+    display: flex;
+    flex: 1 1;
   .term-content {
     width: 1110px;
     display: flex;

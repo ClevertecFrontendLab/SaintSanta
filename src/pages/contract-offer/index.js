@@ -1,1 +1,1 @@
-import { ContractOffer } from "./contract-offer";
+export { ContractOffer } from './contract-offer';

@@ -2,8 +2,8 @@ import { FC, memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { URL_API } from '../../constants/url-api';
-import { Button } from '../book-button/book-button';
-import { Rating } from '../rating/rating';
+import { Button } from '../book-button';
+import { Rating } from '../rating';
 
 import './card.scss';
 

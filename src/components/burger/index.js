@@ -1,1 +1,0 @@
-import { Burger } from "./burger";

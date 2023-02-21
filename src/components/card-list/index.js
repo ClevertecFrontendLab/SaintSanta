@@ -1,1 +1,1 @@
-import { CardList } from "./card-list";
+export { CardList } from './card-list';

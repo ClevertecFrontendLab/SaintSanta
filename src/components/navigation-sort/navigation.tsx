@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from 'react';
 import sortList from '../../assets/icon/icon_menu.png';
 import sortTile from '../../assets/icon/icon_square-four.png';
 import { CustomInput } from '../custom-input/custom-input';
-import { SortButton } from '../sort-button/sort-button';
+import { SortButton } from '../sort-button';
 
 import './navigation.scss';
 

@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import sortList from '../../assets/icon/icon_menu.png';
 import sortTile from '../../assets/icon/icon_square-four.png';
-import { CardList } from '../../components/card-list/card-list';
+import { CardList } from '../../components/card-list';
 import { CustomInput } from '../../components/custom-input/custom-input';
 import { Error } from '../../components/error';
 import { Loader } from '../../components/loader';
 import { MenuNavigation } from '../../components/navigation/menu-navigation';
-import { SortButton } from '../../components/sort-button/sort-button';
+import { SortButton } from '../../components/sort-button';
 import { fetchBooks } from '../../store/books-slice';
 
 import './main-page.scss';
