@@ -1,9 +1,10 @@
-import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { menuAllBooks, menuListBasic } from '../../constants/menu-category';
 import { fetchCategories } from '../../store/categories-slice';
+import { createMenuCategories } from '../../utils/counter-category';
 
 import arrowBottomBlack from './assets/arrow-bottom-black.svg';
 import arrowTopColor from './assets/arrow-top-color.svg';
@@ -29,6 +30,7 @@ export const MenuNavigation = ({
 
   const [isMenuBook, setMenuBook] = useState(true);
 
+  const { books } = useSelector((state) => state.books);
   const { categories, errorCategories } = useSelector((state) => state.categories);
   const dispatch = useDispatch();
   const isError = Boolean(errorCategories);
@@ -36,6 +38,11 @@ export const MenuNavigation = ({
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const menuCategories = useMemo(
+    () => books && categories && createMenuCategories(books, categories),
+    [books, categories]
+  );
 
   return (
     <nav className='navigation' data-test-id={dataTestid}>
@@ -73,24 +80,30 @@ export const MenuNavigation = ({
               onClick={() => setButtonState?.(false)}
               data-test-id={`${dataTestid}-books`}
             >
-              {isError ? '' : menuAllBooks.name}
+              <div data-test-id='navigation-books'>{isError ? '' : menuAllBooks.name}</div>
             </NavLink>
           </li>
-
-          {categories.map(({ name, id, path }) => (
-            <li key={id}>
-              <NavLink
-                to={`/books/${path}`}
-                className={({ isActive }) => (isActive ? 'nav-item nav-item-active' : 'nav-item')}
-                onClick={() => setButtonState?.(false)}
-              >
-                {name}
-              </NavLink>
-              <span className={pathname.split('/')[2] === path ? 'text-span-active' : 'text-span'}>
-                {Math.ceil(Math.random() * 10)}
-              </span>
-            </li>
-          ))}
+          {menuCategories &&
+            menuCategories.map(({ id, path, name, count }) => (
+              <li key={id}>
+                <NavLink
+                  to={`/books/${path}`}
+                  className={({ isActive }) => (isActive ? 'nav-item nav-item-active' : 'nav-item')}
+                  onClick={() => {
+                    setButtonState?.(false);
+                  }}
+                  state={{ countBooks: count }}
+                >
+                  <span data-test-id={`navigation-${path}`}>{name}</span>
+                </NavLink>
+                <span
+                  data-test-id={`navigation-book-count-for-${path}`}
+                  className={pathname.split('/')[2] === path ? 'text-span-active' : 'text-span'}
+                >
+                  {count}
+                </span>
+              </li>
+            ))}
         </ul>
       </div>
 

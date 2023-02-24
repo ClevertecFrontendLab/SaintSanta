@@ -1,3 +1,5 @@
+@import '../../styles//constants.scss';
+
 .navigation {
     grid-area:auto;
     display: grid;
@@ -125,15 +127,13 @@
 
 .text-span-active {
     padding-left: 8px;
-    color: #363636;
+    color: $color-dark;
 }
 
 .terms {
     display: grid;
     row-gap: 42px;
     margin-top: 42px;
-    // position: absolute;
-    // top: 866px;
     transition: all 0.4s linear;
 }
 
@@ -156,9 +156,3 @@
     margin: 42px 0;
     transition: all 0.4s linear;
 }
-
-// @media (max-width: 1050px) {
-//     .navigation {
-//         display: none;
-//     }
-// }
