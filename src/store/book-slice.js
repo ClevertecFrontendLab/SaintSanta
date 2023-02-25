@@ -25,19 +25,19 @@ const bookSlice = createSlice({
     status: null,
     error: null,
   },
-  extraReducers: {
-    [fetchBook.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(fetchBook.pending, (state) => {
       state.status = 'loading';
       state.error = null;
-    },
-    [fetchBook.fulfilled]: (state, action) => {
+    });
+    builder.addCase(fetchBook.fulfilled, (state, action) => {
       state.status = 'resolved';
       state.book = action.payload;
-    },
-    [fetchBook.rejected]: (state, action) => {
+    });
+    builder.addCase(fetchBook.rejected, (state, action) => {
       state.status = 'rejected';
       state.error = action.payload;
-    },
+    });
   },
 });
 

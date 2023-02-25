@@ -25,19 +25,19 @@ const categoriesSlice = createSlice({
     statusCategories: null,
     errorCategories: null,
   },
-  extraReducers: {
-    [fetchCategories.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(fetchCategories.pending, (state) => {
       state.statusCategories = 'loading';
       state.errorCategories = null;
-    },
-    [fetchCategories.fulfilled]: (state, action) => {
+    });
+    builder.addCase(fetchCategories.fulfilled, (state, action) => {
       state.statusCategories = 'resolved';
       state.categories = action.payload;
-    },
-    [fetchCategories.rejected]: (state, action) => {
+    });
+    builder.addCase(fetchCategories.rejected, (state, action) => {
       state.statusCategories = 'rejected';
       state.errorCategories = action.payload;
-    },
+    });
   },
 });
 
