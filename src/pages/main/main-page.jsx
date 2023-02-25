@@ -64,7 +64,7 @@ export const MainPage = () => {
       <div className='menu-navigation'>
         <MenuNavigation />
       </div>
-      {statusCategories === 'loading' && <Loader />}
+      {statusCategories === 'loading'|| statusCategories === 'loading' && <Loader />}
       {!isError && (
         <div className='main-content'>
           <div className='main-content content'>
