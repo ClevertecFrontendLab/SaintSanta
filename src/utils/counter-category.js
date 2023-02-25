@@ -1,5 +1,3 @@
-import { menuAllBooks } from '../constants/menu-category';
-
 export const createMenuCategories = (books, categories) => {
   const counterMap = books.reduce((acc, book) => {
     book.categories?.forEach((category) => {
@@ -18,11 +16,7 @@ export const createMenuCategories = (books, categories) => {
 
   return categories.reduce((acc, category, index) => {
     if (index === 0) {
-      return [
-        ...acc,
-        { id: 0, name: menuAllBooks.name, path: menuAllBooks.path, count: null },
-        { ...category, count: counterMap[category.name] },
-      ];
+      return [];
     }
 
     return [...acc, { ...category, count: counterMap[category.name] ? counterMap[category.name] : 0 }];
