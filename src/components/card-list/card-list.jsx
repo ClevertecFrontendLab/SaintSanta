@@ -1,15 +1,13 @@
-import { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-// import { Books } from '../../constants/books';
 import { fetchBooks } from '../../store/books-slice';
-import { /* BookType, */ Card } from '../card';
+import { Card } from '../card';
 
 import './card-list.scss';
 
-export const CardList /* : FC<BookType> */ = () => {
+export const CardList = ({ cardsData, inputText }) => {
   const dispatch = useDispatch();
-  const {books} = useSelector((state) => state.books);
 
   useEffect(() => {
     dispatch(fetchBooks());
@@ -17,11 +15,13 @@ export const CardList /* : FC<BookType> */ = () => {
 
   return (
     <main className='card-list'>
-      {books.map((book) => {
-        const { image, rating, title, authors, issueYear, booking, id } = book;
+      {cardsData.map((cardData) => {
+        const { image, rating, title, authors, issueYear, booking, id } = cardData;
 
         return (
           <Card
+            cardData={cardData}
+            inputText={inputText}
             image={image}
             rating={rating}
             title={title}
