@@ -2,10 +2,21 @@
 
 .book-wrapper {
   background-color: $color-grey-black-5;
-  .book {
-    width: 1110px;
+  a {
+    margin: 0 10px;
+  }
+  a:first-child {
+    margin-left: 0;
     display: flex;
+  }
+  a:last-child {
+    margin-right: 0;
+    cursor: default;
+  }
+  .breadcrumbs {
     margin: 0 auto;
+    max-width: 1110px;
+    display: flex;
     padding-top: 23px;
     padding-bottom: 23px;
     color: $color-grey-black-40;

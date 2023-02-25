@@ -1,31 +1,18 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/alt-text */
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import arrow from '../../assets/icon/icon_chevron_up.png';
 import noUserImg from '../../assets/img/user.jpg'
 import { URL_API } from '../../constants/url-api';
-import { BookData } from '../../models/book-data';
-import { BookDescriptionAPI } from '../../models/book-data-api';
 import { fetchBook } from '../../store/book-slice';
 import { formatDateReview } from '../../utils/date';
 import { Error } from '../error';
 import { Loader } from '../loader';
 import { Rating } from '../rating';
-import { Slider } from '../slider';
-import { UsersReviewList } from '../users-review-list/users-review-list';
 
 import './book-description.scss';
-
-// type BookParams = {
-//   bookId: string;
-// };
-
-// interface IBookDescription {
-//     book: BookDescriptionAPI;
-// }
 
 export const BookDescription = () => {
   const [isOpenReviews, setIsOpenReviews] = useState(true);
@@ -57,7 +44,7 @@ export const BookDescription = () => {
             )}
 
             <div className='book-description-main'>
-              <p className='book-name'>{book.title}</p>
+              <p className='book-name' data-test-id='book-title'>{book.title}</p>
               <p className='book-author'>
                 {book.authors}, {book.issueYear}
               </p>
@@ -154,7 +141,6 @@ export const BookDescription = () => {
                       <p className='review-user-text'>{review.text}</p>
                     </div>
                   ))}
-            {/* <UsersReviewList /> */}
             <button className='rate-a-book' type='button' data-test-id='button-rating'>
               оценить книгу
             </button>
