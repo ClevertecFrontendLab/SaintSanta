@@ -69,7 +69,6 @@ export const BurgerMenuNavigation = ({
               to={`/${menuListBasic.books.path}/${menuAllBooks.category}`}
               className={({ isActive }) => (isActive ? 'nav-item nav-item-active' : 'nav-item')}
               onClick={() => setButtonState?.(false)}
-              data-test-id={`${dataTestid}-books`}
             >
               <span data-test-id='burger-books'>{isError ? '' : menuAllBooks.name}</span>
             </NavLink>
