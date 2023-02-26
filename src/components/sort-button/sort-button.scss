@@ -22,4 +22,11 @@
     }
     padding: 8px;
   }
+  .sort-up {
+    rotate: 180deg;
+  }
+}
+
+.sort-button:hover {
+    cursor: pointer;
 }

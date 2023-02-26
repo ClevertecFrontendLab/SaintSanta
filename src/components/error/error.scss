@@ -35,6 +35,9 @@
     height: 24px;
     background: inherit;
     border: none;
+    :hover {
+      cursor: pointer;
+    }
   }
 }
 

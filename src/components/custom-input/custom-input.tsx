@@ -1,12 +1,17 @@
-
-import { FC, useState } from 'react';
+/* eslint-disable jsx-a11y/no-autofocus */
+import { useState } from 'react';
 
 import close from '../../assets/icon/icon_close.png';
 import search from '../../assets/icon/icon_search.png';
 
 import './custom-input.scss';
 
-export const CustomInput: FC = () => {
+type Props = {
+  inputText: string;
+  changeInputText: (value: string) => void;
+};
+
+export const CustomInput = ({ inputText, changeInputText }: Props) => {
   const [isOpenInput, setIsOpenInput] = useState(false);
 
   return (
@@ -29,7 +34,10 @@ export const CustomInput: FC = () => {
         onFocus={() => {
           setIsOpenInput(true);
         }}
+        value={inputText}
+        onChange={(e) => changeInputText(e.target.value)}
         data-test-id='input-search'
+        autoFocus={true}
       />
 
       <button

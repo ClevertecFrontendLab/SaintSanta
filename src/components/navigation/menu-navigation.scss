@@ -1,164 +1,164 @@
+@import '../../styles//constants.scss';
+
 .navigation {
-    grid-area:auto;
-    display: grid;
-    align-items: baseline;
-    align-content: start;
-    max-width: 255px;
-    max-height: 768px;
-    margin-bottom: 202px;
-    margin-right: 30px;
+  grid-area: auto;
+  display: grid;
+  align-items: baseline;
+  align-content: start;
+  max-width: 255px;
+  max-height: 768px;
+  margin-bottom: 202px;
+  margin-right: 30px;
 }
 
 .books {
-    display: grid;
-    row-gap: 16px;
-    margin-top: 16px;
-    position: relative;
-    overflow: hidden;
+  display: grid;
+  row-gap: 16px;
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
 }
 
 .books-burger-menu {
-    margin-top: 16px;
-    position: relative;
-    overflow: visible;
+  margin-top: 16px;
+  position: relative;
+  overflow: visible;
 }
 
 .books-burger-menu-hide {
-    display: none;
+  display: none;
 }
 
 .navLinkBurger {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-link {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    cursor: pointer;
-    border: none;
-    background-color: inherit;
-    text-align: left;
-    color: black;
-    display: flex;
-    justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  text-align: left;
+  color: black;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-link:hover {
-    border-bottom: 1px solid black;
-    margin-bottom: -1px;
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
 }
 
 .nav-link-active {
-    background-color: #f83600;
-    background-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
-    background-clip: inherit;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    border-bottom: 1px solid transparent;
-    border-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
-    border-image-slice: 1;
-    margin-bottom: -1px;
+  background-color: #f83600;
+  background-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+  background-clip: inherit;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+  border-image-slice: 1;
+  margin-bottom: -1px;
 }
 
 .navLinkImg {
-    transform: rotate(180deg);
-    transition: all 0.4s linear;
+  transform: rotate(180deg);
+  transition: all 0.4s linear;
 }
 
 .navLinkImgActive {
-    grid-template-columns: 2 / 3;
-    transition: all 0.4s linear;
+  grid-template-columns: 2 / 3;
+  transition: all 0.4s linear;
 }
 
 .navLinkText {
-    grid-template-columns: 1 / 2;
+  grid-template-columns: 1 / 2;
 }
 
 .navList {
-    display: grid;
-    row-gap: 16px;
-    padding-left: 24px;
-    opacity: 1;
-    transition: all 0.4s linear;
-    justify-items: start;
+  display: grid;
+  row-gap: 16px;
+  padding-left: 24px;
+  opacity: 1;
+  transition: all 0.4s linear;
+  justify-items: start;
 }
 
 .navListHide {
-    transform: translateY(-110%);
-    transition: all 0.4s linear;
+  transform: translateY(-110%);
+  transition: all 0.4s linear;
 }
 
 .nav-item {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    cursor: pointer;
-    border: none;
-    background-color: inherit;
-    background-image: none;
-    text-align: left;
-    transition: color 0.2s linear;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  background-image: none;
+  text-align: left;
+  transition: color 0.2s linear;
 }
 
 .nav-item:hover {
-    color: #ff5253;
+  color: #ff5253;
 }
 
 .nav-item-active {
-    font-weight: 700;
-    font-size: 16px;
-    background-color: #f83600;
-    background-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
-    background-clip: inherit;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #f83600;
+  background-image: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+  background-clip: inherit;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .text-span {
-    padding-left: 8px;
-    color: #a7a7a7;
+  padding-left: 8px;
+  color: #a7a7a7;
 }
 
 .text-span-active {
-    padding-left: 8px;
-    color: #363636;
+  padding-left: 8px;
+  color: $color-dark;
 }
 
 .terms {
-    display: grid;
-    row-gap: 42px;
-    margin-top: 42px;
-    // position: absolute;
-    // top: 866px;
-    transition: all 0.4s linear;
+  display: grid;
+  row-gap: 42px;
+  margin-top: 42px;
+  transition: all 0.4s linear;
 }
 
 .termsTop {
-    top: 176px;
-    transition: all 0.4s linear;
+  top: 176px;
+  transition: all 0.4s linear;
 }
 
-.navBurgerMenuNavList {
-    display: grid;
-    row-gap: 16px;
-    padding-left: 24px;
-    justify-items: start;
+.nav-burger-menu-nav-list {
+  display: grid;
+  row-gap: 16px;
+  padding-left: 24px;
+  justify-items: start;
 }
 
 .nav-burger-menu-terms {
-    display: grid;
-    grid-template-columns: 255px;
-    row-gap: 22px;
-    margin: 42px 0;
-    transition: all 0.4s linear;
+  display: grid;
+  grid-template-columns: 255px;
+  row-gap: 22px;
+  margin: 42px 0;
+  transition: all 0.4s linear;
 }
 
-// @media (max-width: 1050px) {
-//     .navigation {
-//         display: none;
-//     }
-// }
+@media (max-width: 1050px) {
+  .navigation {
+    display: none;
+  }
+}

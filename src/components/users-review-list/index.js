@@ -1,1 +1,1 @@
-import { UsersReviewList } from "./users-review-list";
+export { UsersReviewList } from './users-review-list';

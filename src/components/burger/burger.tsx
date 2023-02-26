@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { menuListBasic } from '../../constants/menu-category';
 import { ButtonMenuBurger } from '../burger-button';
 import { MenuNavigation } from '../navigation';
+import { BurgerMenuNavigation } from '../navigation/burger-menu-navigation';
 
 import './burger.scss';
 import './burger-menu.scss';
@@ -45,7 +46,7 @@ export const Burger: FC = () => {
         ref={dropRef}
         data-test-id='burger-navigation'
       >
-        <MenuNavigation setButtonState={setButtonState} burgerMenuNavigation={true} dataTestid='burger'>
+        <BurgerMenuNavigation setButtonState={setButtonState} burgerMenuNavigation={true} dataTestid='burger'>
           <div className={isOpenMenu ? 'burgerMenuNavListUserTop burgerMenuNavListUser' : 'burgerMenuNavListUser'}>
             <hr className='burgerMenuLine' />
             <NavLink
@@ -71,7 +72,7 @@ export const Burger: FC = () => {
               {menuListBasic.exit.name}
             </NavLink>
           </div>
-        </MenuNavigation>
+        </BurgerMenuNavigation>
       </div>
     </div>
   );

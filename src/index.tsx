@@ -6,9 +6,9 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout/layout';
 import { RoutePath } from './models/route-path.enum';
 import { BookPage } from './pages/book';
-import { ContractOffer } from './pages/contract-offer/contract-offer';
+import { ContractOffer } from './pages/contract-offer';
 import { MainPage } from './pages/main';
-import { Terms } from './pages/terms/terms';
+import { Terms } from './pages/terms';
 import { store } from './store';
 
 import './index.scss';

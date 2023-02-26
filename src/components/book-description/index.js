@@ -1,1 +1,1 @@
-import { BookDescription } from "./book-description";
+export { BookDescription } from './book-description';

@@ -1,8 +1,10 @@
 import { FC, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import { Footer } from '../footer/footer';
-import { Header } from '../header/header';
+import { Footer } from '../footer';
+import { Header } from '../header';
+
+import './layout.scss'
 
 export const Layout: FC = () => {
   const { pathname } = useLocation();
@@ -12,7 +14,7 @@ export const Layout: FC = () => {
   }, [pathname]);
 
   return (
-    <div>
+    <div className='layout'>
       <Header />
       <Outlet />
       <Footer />
