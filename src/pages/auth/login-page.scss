@@ -1,0 +1,93 @@
+@import '../../styles/constants.scss';
+
+.user-info-wrapper {
+  .registration-content-input-error {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: $color-grey-black-40;
+    padding-left: 10px;
+    padding-top: 2px;
+    max-width: 400px;
+
+    @media (max-width: 675px) {
+      max-width: 240px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .error-hint {
+    color: $color-negative;
+  }
+  .normal-hint {
+    color: $color-grey-black-40;
+  }
+}
+
+.registration-section {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 92px;
+
+  .input-field-wrapper {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    .placeholder-text {
+      height: 56px;
+      display: block;
+      position: absolute;
+      color: $color-dark;
+      padding: 12px;
+      transform: translateY(6px);
+      pointer-events: none;
+      top: 0px;
+      left: 0px;
+      transition: all 0.3s;
+    }
+
+    .input-field {
+      width: 416px;
+      height: 56px;
+      padding: 12px;
+      padding-bottom: 0px;
+      color: $color-dark;
+      background-color: $color-grey-black-5;
+      border: none;
+      border-bottom: 1px solid $color-grey-black-20;
+      border-radius: 4px 4px 0 0;
+
+      &:focus {
+        color: $color-dark;
+        outline: none;
+      }
+
+      &:focus + .placeholder-text {
+        color: $color-grey-black-40;
+        font-size: 12px;
+        line-height: 16px;
+        transform: translateY(-5px);
+      }
+      &-error {
+        border-bottom: 1px solid $color-negative;
+      }
+    }
+    .placeholder-text-up {
+      display: block;
+      position: absolute;
+      left: 12px;
+      top: 7px;
+      color: $color-grey-black-40;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
