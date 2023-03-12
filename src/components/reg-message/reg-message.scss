@@ -1,0 +1,67 @@
+@import '../../styles/constants.scss';
+
+.reg-message {
+  background-color: $color-white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  align-items: center;
+  padding: 48px 96px 48px 96px;
+
+  @media (max-width: 675px) {
+    padding: 42px 16px 32px 16px;
+  }
+
+  &-title {
+    padding-bottom: 32px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: $color-dark;
+
+    @media (max-width: 675px) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: $color-dark;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @media (max-width: 675px) {
+      max-width: 256px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  &-button {
+    width: 410px;
+    height: 52px;
+
+    background: $color-hover;
+    border-radius: 30px;
+    border: none;
+    color: $color-white;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+
+    cursor: pointer;
+
+    @media (max-width: 675px) {
+      max-width: 256px;
+    }
+  }
+}
