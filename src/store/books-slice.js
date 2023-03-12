@@ -2,11 +2,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { URL_API } from '../constants/url-api';
+import { API_ENDPOINTS,URL_API } from '../constants/url-api';
 
 export const fetchBooks = createAsyncThunk('book/fetchBooks', async (_, { rejectWithValue }) => {
   try {
-    const { data, statusText } = await axios.get(`${URL_API}/api/books/`);
+    const { data, statusText } = await axios.get(`${URL_API}${API_ENDPOINTS.BOOKS}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+      });
 
     if (statusText !== 'OK') {
       throw new Error();

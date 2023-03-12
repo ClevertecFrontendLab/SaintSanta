@@ -5,4 +5,7 @@ export enum RoutePath {
   terms = 'terms',
   contract = 'contract-offer',
   bookPage = '/books/:category/:bookId',
+  authorization = '/auth',
+  registration = '/registration',
+  forgotPass = '/forgot-pass',
 }
