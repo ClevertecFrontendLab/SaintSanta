@@ -1,9 +1,10 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { menuListBasic } from '../../constants/menu-category';
+import { logOut } from '../../store/auth-slice';
 import { ButtonMenuBurger } from '../burger-button';
-import { MenuNavigation } from '../navigation';
 import { BurgerMenuNavigation } from '../navigation/burger-menu-navigation';
 
 import './burger.scss';
@@ -11,7 +12,7 @@ import './burger-menu.scss';
 
 export const Burger: FC = () => {
   const [isOpenMenu, setButtonState] = useState(false);
-
+  const dispatch = useDispatch();
   const dropRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,10 +65,12 @@ export const Burger: FC = () => {
               to={`/${menuListBasic.exit.path}`}
               onClick={() => {
                 setButtonState(false);
+                dispatch(logOut());
               }}
               className={({ isActive }) =>
                 isActive ? 'burgerMenuNavLink burgerMenuNavLinkActive' : 'burgerMenuNavLink'
               }
+              data-test-id='exit-button'
             >
               {menuListBasic.exit.name}
             </NavLink>
