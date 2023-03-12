@@ -198,6 +198,9 @@
   .normal-hint {
     color: $color-grey-black-40;
   }
+  @media (max-width: 500px) {
+    max-width: 288px;
+  }
 }
 
 .credential-back-wrapper {
@@ -273,6 +276,9 @@
       }
       &-error {
         border-bottom: 1px solid $color-negative;
+      }
+      @media (max-width: 500px) {
+        max-width: 100%;
       }
     }
     .placeholder-text-up {
